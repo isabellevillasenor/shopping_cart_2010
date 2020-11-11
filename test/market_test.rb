@@ -3,6 +3,7 @@ require 'Minitest/pride'
 require './lib/item'
 require './lib/vendor'
 require './lib/market'
+require 'date'
 
 class MarketTest < Minitest::Test
     def setup
@@ -14,6 +15,7 @@ class MarketTest < Minitest::Test
       @item4 = Item.new({name: "Banana Nice Cream", price: "$4.25"})
       @vendor2 = Vendor.new("Ba-Nom-a-Nom")
       @vendor3 = Vendor.new("Palisade Peach Shack")
+      @item5 = Item.new({name: 'Onion', price: '$0.25'})
     end
 
     def test_exists_with_attributes
@@ -122,5 +124,9 @@ class MarketTest < Minitest::Test
       @vendor3.stock(@item3, 10)
 
       assert_equal ["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"], @market.sorted_item_list
+    end
+
+    def test_market_date
+        DateTime.strptime("%d/%m/%y")
     end
 end
