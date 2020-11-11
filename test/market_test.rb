@@ -3,7 +3,6 @@ require 'Minitest/pride'
 require './lib/item'
 require './lib/vendor'
 require './lib/market'
-require 'date'
 
 class MarketTest < Minitest::Test
     def setup
@@ -124,9 +123,5 @@ class MarketTest < Minitest::Test
       @vendor3.stock(@item3, 10)
 
       assert_equal ["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"], @market.sorted_item_list
-    end
-
-    def test_market_date
-        DateTime.strptime("%d/%m/%y")
     end
 end
