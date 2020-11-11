@@ -111,6 +111,6 @@ class MarketTest < Minitest::Test
     end
 
     def test_sorted_item_list
-
+      assert_equal ["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"], @market.sorted_item_list
     end
 end

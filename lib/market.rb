@@ -45,7 +45,11 @@ class Market
   end
 
   def sorted_item_list
-
+    sorted = []
+    @inventory.keys.each do |item|
+        sorted << item.name
+    end
+    sorted.sort
   end
 
 end
